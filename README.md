@@ -15,9 +15,9 @@ This is a write-up from (mainly) three people inexperienced in CTFs and challeng
 ## The Challenge
 It was hosted by the DGSE and ESIEE Paris on https://challengecybersec.fr/ and lasted from 24/10/2020 to 11/11/2020. The challenge was themed around [Brigitte Friang](https://en.wikipedia.org/wiki/Brigitte_Friang), who was part of the french resistance, and the goal was to retrieve scattered informations from agents about an evil corporation named "Evil Country". It was separated into three main parts:
 
-- __[Introduction]()__: Some preliminaries before entering the actual challenge.
-- __[The Chat]()__: The first part containing different categories of challenges.
-- __[Coros CTF]()__: The actual CTF challenges.
+- __[Introduction](./Brigitte%20Friang%20Challenge/Introduction)__: Some preliminaries before entering the actual challenge.
+- __[The Chat](./Brigitte%20Friang%20Challenge/Chat)__: The first part containing different categories of challenges.
+- __[Coros CTF](./Brigitte%20Friang%20Challenge/Coros%20CTF)__: The actual CTF challenges.
 
 
 ## More Details
