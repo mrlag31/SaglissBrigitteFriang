@@ -9,8 +9,7 @@ Presented by the 'Sagliss' team composed by:
 - [Célian "celianvdb" Van Der Biest](https://github.com/celianvdb)
 - [astalios](https://github.com/Astalios)
 
-This is a write-up from (mainly) three people inexperienced in CTFs and challenges (it was our first one). It will give you insights on our thinking, our tests, our failures and our successes from a begginner's team point of view.
-
+This is a write-up from (mainly) three people inexperienced in CTFs and challenges (it was our first one). It will give you insights on our thinking, our tests, our failures and our successes from a begginner's team point of view. It's aimed at people with low to no experience on CTFs and for some solutions to classic CTF challenges.
 
 ## The Challenge
 It was hosted by the DGSE and ESIEE Paris on https://challengecybersec.fr/ and lasted from 24/10/2020 to 11/11/2020. The challenge was themed around [Brigitte Friang](https://en.wikipedia.org/wiki/Brigitte_Friang), who was part of the french resistance, and the goal was to retrieve scattered informations from agents about an evil corporation named "Evil Country". It was separated into three main parts:
