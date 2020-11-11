@@ -21,3 +21,9 @@ It was hosted by the DGSE and ESIEE Paris on https://challengecybersec.fr/ and l
 
 ## More Details
 The challenge was first started by [astalios](https://github.com/Astalios) the 06/11, pretty late into the CTF. He quickly asked help from [MrLag](https://github.com/MrLag31) and [celianvdb](https://github.com/celianvdb) and formed a team to work on the challenge. We mostly worked during the 3 following days. We were able to quickly get to the chat the first day, entered Coros CTF at the end of the second day and, finally, finished 5 challenges during the rest of our time.
+
+## Final Score
+We scored a total of 450 points, resolved 5 out of 14 challenges and ranked 153rd.
+<p align="center">
+    <img width=100% src="./ranking.png" alt="Rank: 153 - Team: Sagliss - Last Validation: 08/11 - Points: 450">
+</p>
