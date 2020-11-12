@@ -2,7 +2,7 @@
 
 ## Evil Gouv Recrute
 
-In this challenge, Blaise Pascal tells us he was able to intercept a modified file ([original.txt (original)](./original.txt), [intercepte.txt (modified)](./Evil%20Group%20Recrute/intercepte.txt)) and a message is probably hidden in the later. These are the first lines of each file:
+In this challenge, Blaise Pascal tells us he was able to intercept a modified file ([original.txt (original)](./original.txt), [intercepte.txt (modified)](./Evil%20Gouv%20Recrute/intercepte.txt)) and a message is probably hidden in the later. These are the first lines of each file:
 ```
 original.txt:
     HEALTH ASPECTS
@@ -16,11 +16,11 @@ intercepte.txt:
     aOF 
     CsHEMIeCAL6 AND4 BIOLOGICAL:
 ```
-One can now assume that the intercepted file is the same as the original one, except that new characters have been added. The script [diff_extract.py](./Evil%20Group%20Recrute/diff_extract.py) will do just that.
+One can now assume that the intercepted file is the same as the original one, except that new characters have been added. The script [diff_extract.py](./Evil%20Gouv%20Recrute/diff_extract.py) will do just that.
 ```
 $ python diff_extract.py diff.txt
 ```
-This will extract all of the extra characters and save them in [diff.txt](./Evil%20Group%20Recrute/diff.txt). It is mostly gibberish except for the first few characters: `base64:`. This indicates that the file is encoded in Base 64. Using `base64` or [decode_base64.py](./Evil%20Group%20Recrute/decode_base64.py), we can decode the file.
+This will extract all of the extra characters and save them in [diff.txt](./Evil%20Gouv%20Recrute/diff.txt). It is mostly gibberish except for the first few characters: `base64:`. This indicates that the file is encoded in Base 64. Using `base64` or [decode_base64.py](./Evil%20Gouv%20Recrute/decode_base64.py), we can decode the file.
 ```
 $ tail -c +8 diff.txt | base64 -d > raw
 $ python decode_base64.py diff.txt raw
