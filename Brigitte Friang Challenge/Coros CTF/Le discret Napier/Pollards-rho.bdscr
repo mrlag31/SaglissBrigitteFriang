@@ -1,0 +1,50 @@
+n = 19481470025232063548957;
+a = 11414994737787755290593024985572726460;
+b = 2207895463950465735318088365968929796;
+p = 207419578609033051199924683129295125643;
+
+p0 = p/3;
+p1 = 2*p/3;
+
+define s (x) = x%3;
+define f (u, v) = modmul(modexp(a, u, p), modexp(b, v, p), p);
+define g (s, u) = iif(s&1, u+1, iif(s&2, u, 2*u%n));
+define h (s, v) = iif(s&1, v, iif(s&2, v+1, 2*v%n));
+
+x = 0;
+
+ai = 0;
+bi = 0;
+xi = 1;
+
+a2i = 0;
+b2i = 0;
+x2i = 1;
+
+while x==0 do
+    si = s(xi);
+    ai = g(si, ai);
+    bi = h(si, bi);
+    xi = f(ai, bi);
+
+    s2i = s(x2i);
+    a2i = g(s2i, a2i);
+    b2i = h(s2i, b2i);
+    x2i = f(a2i, b2i);
+
+    s2i = s(x2i);
+    a2i = g(s2i, a2i);
+    b2i = h(s2i, b2i);
+    x2i = f(a2i, b2i);
+
+    // println(xi, ai, bi, x2i, a2i, b2i);
+
+    if xi == x2i then
+        r = bi + modmul(b2i, n-1, n);
+        if r%n == 0 then println('ERROR'); fi;
+        x = modmul(modinv(r, n), a2i + modmul(ai, n-1, n), n);
+        println('FOUND', x);
+        println('-', modexp(a,x,p), '\n-', b);
+        x=1;
+    fi
+done

@@ -1,0 +1,69 @@
+g = 17;
+h = 183512102249711162422426526694763570228;
+p = 207419578609033051199924683129295125643;
+
+phi_p = p - 1;
+
+p0 = 2;
+p1 = 43;
+p2 = 47;
+p3 = 373;
+p4 = 2707
+p5 = 2608763;
+p6 = 19481470025232063548957;
+
+g0 = modexp(g, phi_p/p0, p);
+g1 = modexp(g, phi_p/p1, p);
+g2 = modexp(g, phi_p/p2, p);
+g3 = modexp(g, phi_p/p3, p);
+g4 = modexp(g, phi_p/p4, p);
+g5 = modexp(g, phi_p/p5, p);
+g6 = modexp(g, phi_p/p6, p);
+
+h0 = modexp(h, phi_p/p0, p);
+h1 = modexp(h, phi_p/p1, p);
+h2 = modexp(h, phi_p/p2, p);
+h3 = modexp(h, phi_p/p3, p);
+h4 = modexp(h, phi_p/p4, p);
+h5 = modexp(h, phi_p/p5, p);
+h6 = modexp(h, phi_p/p6, p);
+
+println(p0);
+println(g0);
+println(h0);
+
+println('-');
+
+println(p1);
+println(g1);
+println(h1);
+
+println('-');
+
+println(p2);
+println(g2);
+println(h2);
+
+println('-');
+
+println(p3);
+println(g3);
+println(h3);
+
+println('-');
+
+println(p4);
+println(g4);
+println(h4);
+
+println('-');
+
+println(p5);
+println(g5);
+println(h5);
+
+println('-');
+
+println(p6);
+println(g6);
+println(h6);
