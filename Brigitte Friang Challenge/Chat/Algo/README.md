@@ -18,16 +18,16 @@ intercepte.txt:
 ```
 One can now assume that the intercepted file is the same as the original one, except that new characters have been added. The script [diff_extract.py](./Evil%20Group%20Recrute/diff_extract.py) will do just that.
 ```
-` python diff_extract.py diff.txt
+$ python diff_extract.py diff.txt
 ```
 This will extract all of the extra characters and save them in [diff.txt](./Evil%20Group%20Recrute/diff.txt). It is mostly gibberish except for the first few characters: `base64:`. This indicates that the file is encoded in Base 64. Using `base64` or [decode_base64.py](./Evil%20Group%20Recrute/decode_base64.py), we can decode the file.
 ```
-` tail -c +8 diff.txt | base64 -d > raw
-` python decode_base64.py diff.txt raw
+$ tail -c +8 diff.txt | base64 -d > raw
+$ python decode_base64.py diff.txt raw
 ```
 We can then use `file` to check for its type. This can also be done by opening the file in a HexEditor and searching for magical number (`JFIF` in our case, which is a JPEG format)
 ```
-` file raw
+$ file raw
 raw: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, progressive, precision 8, 596x842, components 3
 ```
 Here is what the image looks like:
