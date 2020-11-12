@@ -44,7 +44,7 @@ We can now extract a new link from this image: https://www.challengecybersec.fr/
 
 When getting to the last URL, we are prompted to resolve an internal problem about storing things in a warehouse. Reading [IMPORTANT.pdf](./Knapsack/IMPORTANT.pdf), we can determine that it is a slightly modified version of the [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem).
 
-The [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem) is a well-known NP-problem that consists in packing the most value with a maximum weight. Let's take an example: imagine you are a thief and can only transport 20kg maximum. When entering the house, you spot 3 objects that wieght 16, 11 and 5kg and are valued at 100, 60 and 32€ respectively. The Knapsack problem is to find which objects to take to maximise our backpack value while not going over the maximum weight.
+The [Knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem) is a well-known NP-problem that consists in packing the most value with a maximum weight. Let's take an example: imagine you are a thief and can only transport 20kg maximum. When entering the house, you spot 3 objects that weight 16, 11 and 5kg and are valued at 100, 60 and 32€ respectively. The Knapsack problem is to find which objects to take to maximise our backpack value while not going over the maximum weight.
 
 This is how it is usually resolved. Let `n` be the number of objects, `M` be the max weight, `W = {w1, ..., wn}` the weights and `V = {v1, ..., vn}` their values (`V = W` for our problem). We suppose the weights and the values are all positive and different. Let also define `S(i, j)` the solution of the problem with the first `i`-th objects and a maximum weight of `j`. The value of our backpack solution is `S(n, M)`.
 
@@ -56,7 +56,7 @@ S(i, j) = | S(i-1, j)                        if wi > j
           | max(S(i-1, j), (i-1, j-wi) + vi) else
 ```
 
-How is it implemented for this problem? A purely recurrent function is possible, used in [rec.py](./Knapsack/rec.py) it has very low memory usage but horrible performance. It is usually done using Dynamic Programmation, where we store intermediate (in a dictionnary for space) data but still uses a recurrent function, used in [dyn.py](./Knapsack/dyn.py). Recurence can be an issue with large set of data because it may hit the end of the limits of reccurence. It is thus implemented with a pile where elements in the pile have not been calculated yet [pil.py](./Knapsack/pil.py).
+How is it implemented for this problem? A purely recurrent function is possible, used in [rec.py](./Knapsack/rec.py) it has very low memory usage but horrible performance. It is usually done using [dynamic programmation](https://en.wikipedia.org/wiki/Dynamic_programming), where we store intermediate data (in a dictionnary for space)) but still uses a recurrent function, used in [dyn.py](./Knapsack/dyn.py). Recurence can be an issue with large set of data because it may hit the end of the limits of reccurence. It is thus implemented with a pile where elements in the pile have not been calculated yet. It is implemented in [pil.py](./Knapsack/pil.py).
 
 ```
 $ python rec.py fichier_a_petit.in 
