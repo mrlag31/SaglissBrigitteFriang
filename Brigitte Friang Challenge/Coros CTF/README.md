@@ -13,7 +13,7 @@ These are the different challenges presented on the Coros CTF:
 - [ ] __[Le discret Napier](./Le%20discret%20Napier)__ - Crypto - 150
 - [ ] __[Le Polyglotte](./Le%20Polyglotte)__ - Stegano - 150
 - [x] __[Sous l'océan](./Sous%20l%27océan)__ - Forensic - 50
-- [ ] __[Steganosaurus](./Steganosaurus)__ - Forensic - 400
+- [ ] __[Steganosaurus (WIP)](./Steganosaurus)__ - Forensic - 400
 - [ ] __Stranger RSA__ - Crypto - 200
 - [ ] __VX Elliptique__ - Crypto - 250
 
