@@ -1,16 +1,15 @@
 # ChatBot
 
-## Challenge
+## Description
 
-For this challenge, we just have a link to a chatbot and "local network" as clue and we know that we have to get access to their intranet.
+EvilGouv a récemment ouvert un service de chat-bot, vous savez ces trucs que personne n'aime. Bon en plus d'être particulièrement nul, il doit forcément y avoir une faille. Trouvez un moyen d'accéder à l'intranet !
 
-### Search
+## Search
 
-At the begin we tried the different options of the chatbot while watching the network analyzer. We found an endpoint named "proxy" and after some test we discovered that we can use this proxy to process any http(s) GET request. So we tried lot of IP/domain and found the nginx default page on http://intranet/. 
+At the begin we tried the different options of the chatbot while watching the network analyzer. We found an endpoint named `proxy` and after some test we discovered this proxy can be used to process any http(s) GET request. So we tried lot of IP/domain and found the nginx default page on http://intranet/. 
 
-``` bash
-
- celian  ~  curl https://challengecybersec.fr/b34658e7f6221024f8d18a7f0d3497e4/proxy?url=http://intranet/ | json_pp
+```
+$ curl https://challengecybersec.fr/b34658e7f6221024f8d18a7f0d3497e4/proxy?url=http://intranet/ | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   698  100   698    0     0   5057      0 --:--:-- --:--:-- --:--:--  5057
