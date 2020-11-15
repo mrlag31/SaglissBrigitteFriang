@@ -2,7 +2,14 @@
 
 ### Challenge
 
+For this challenge, we know that someone put a sniffer on a keypad. We also have the output file of the sniffer and these 2 pics :
 
+<p align="center">
+    <img width=50% src="./keypad_face.jpg" style="float: left" alt="keypad_face">
+    <img width=50% src="./keypad_back.jpg" style="float: left" alt="keypad_back">
+</p>
+
+The goal of this challenge is to retrieve the code pressedo on the keypad.
 
 ### Search
 
