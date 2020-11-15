@@ -1,4 +1,6 @@
-f = open("./output.txt", "r")
+from sys import argv
+
+f = open(argv[1], "r")
 lines = f.read().split("\n")[:-1]
 
 '''
@@ -45,7 +47,7 @@ def keypadMapping(keypadSetup):
 
     return out
 
-#Return input keypadsetup with a -90°C rotation
+#Return input keypadsetup with a -90° rotation
 def rot(keypadSetup):
     new_keypad = [None]*4
     for i in range(4):
