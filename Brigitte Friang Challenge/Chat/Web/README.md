@@ -35,9 +35,7 @@ This last SQL request will print the list of each customer's name and email. And
 
 This plane ticket bookmarking website were also given by Mr. Nitel (https://www.challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/). We had to book a plane ticket from `Bad City` to `Evil City` at thoses dates `26/10/2020` -> ` 28/10/2020` (French Date Format).
 
-When we tried to book the ticket, it asked us to login / register on the site. If you register with a standard mail / username email, you will be denied from accessing the order page, and accessing the QR Code that contain the flag to going further.
-
-You the get an activation link: `http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/activate/ZXhhbXBsZS5leGFtcGxlQHRlc3QuY29t
+When we tried to book the ticket, it asked us to login / register on the site. If you register with a standard mail / username email, you will be denied from accessing the order page, and accessing the QR Code that contain the flag to going further. You thne get an activation link: http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/activate/ZXhhbXBsZS5leGFtcGxlQHRlc3QuY29t
 
 Then we looked at the reset password form, and the link were the same with the sole variation: instead of `activate` you have `reset`. We digged more the link and discovered that the last part of the link was a base64 hash of the account email address (this link is the hash of `example.example@test.com`). We replaced the fake account with the base64 hash of the email we were looking for on stockos (http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/reset/YWdlbnQubWFsaWNlQHNlY3JldC5ldmlsLmdvdi5ldg==), then it displayed the password, and allowed us to order the ticket. It then shows the QR code containing the flag `DGSESIEE{2cd992f9b2319860ce3a35db6673a9b8}`.
 
