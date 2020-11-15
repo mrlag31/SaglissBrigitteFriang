@@ -37,23 +37,12 @@ This plane ticket bookmarking website were also given by Mr. Nitel (https://www.
 
 When we tried to book the ticket, it asked us to login / register on the site. If you register with a standard mail / username email, you will be denied from accessing the order page, and accessing the QR Code that contain the flag to going further.
 
-What we saw :
+You the get an activation link: `http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/activate/ZXhhbXBsZS5leGFtcGxlQHRlc3QuY29t
 
-The account activation page use a link like this 
+Then we looked at the reset password form, and the link were the same with the sole variation: instead of `activate` you have `reset`. We digged more the link and discovered that the last part of the link was a base64 hash of the account email address (this link is the hash of `example.example@test.com`). We replaced the fake account with the base64 hash of the email we were looking for on stockos (http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/reset/YWdlbnQubWFsaWNlQHNlY3JldC5ldmlsLmdvdi5ldg==), then it displayed the password, and allowed us to order the ticket. It then shows the QR code containing the flag `DGSESIEE{2cd992f9b2319860ce3a35db6673a9b8}`.
 
-activate : `http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/activate/ZXhhbXBsZS5leGFtcGxlQHRlc3QuY29t
+<p align="center">
+    <img width=25% src="./flag.png" alt="Rank: 153 - Team: Sagliss - Last Validation: 08/11 - Points: 450">
+</p>
 
-then we looked at the reset password form, and the link were the same with the sole variation : instead of `/activate/` you have `/reset/`
-we digged more the link and discovered that the last part of the link `some_other_value` were a base64 hash of the account email address (this link is the hash of example.example@test.com) we replaced the fake account with the base64 hash of the email we were looking for on stockos, then it displayed the password, and allowed us to order the ticket, then the QR code, then unlocking the flag.
-
-The password recovery link : 
-
-http://challengecybersec.fr/35e334a1ef338faf064da9eb5f861d3c/reset/YWdlbnQubWFsaWNlQHNlY3JldC5ldmlsLmdvdi5ldg==
-
-Password of the user profile : Superlongpassword666
-
-[image du QR CODE]
-
-Flag : `DGSESIEE{2cd992f9b2319860ce3a35db6673a9b8}`
-
-When we sent the flag, we got a Wireshark dump file.
+When provinding the flag, Nitel responded with a `.pcap` file.
