@@ -46,3 +46,24 @@ Then we looked at the reset password form, and the link were the same with the s
 </p>
 
 When provinding the flag, Nitel responded with a `.pcap` file.
+
+## TLS
+
+The next challenge is about decypting a conversation between a client and a server. The data is stored in [capture.pcap](./capture.pcap). One can see that the conversation is done via TLS. The issue is that TLS data can be encrypted (and it is the case here). The conversation is done via `TLS_RSA_WITH_AES_128_CBC_SHA` which is crackable if someone can crack the RSA key of the server. The `PublicKey` is available under the `Certificate` exchange and one can found the following number for `n`:
+```
+(hex) 0x00c2cbb24fdbf923b61268e3f11a3896de4574b3ba58730cbd652938864e2223eeeb704a17cfd08d16b46891a61474759939c6e49aafe7f2595548c74c1d7fb8d24cd15cb23b4cd0a3
+(dec) 188198812920607963838697239461650439807163563379417382700763356422988859715234665485319060606504743045317388011303396716199692321205734031879550656996221305168759307650257059
+```
+While browsing for solutions, we found that this peculiar number was a factorisation challenge called [RSA-576](https://en.wikipedia.org/wiki/RSA_numbers#RSA-576) that yields these results:
+```
+188198812920607963838697239461650439807163563379417382700763356422988859715234665485319060606504743045317388011303396716199692321205734031879550656996221305168759307650257059
+=
+398075086424064937397125500550386491199064362342526708406385189575946388957261768583317
+x
+472772146107435302536223071973048224632914695302097116459852171130520711256363590397527
+```
+The python script [rsa_gen.py](./rsa_gen.py) (Requires [rsa](https://pypi.org/project/rsa/)) will generate a private key file that will be used by Wireshark to decrypt the [TLS](https://wiki.wireshark.org/TLS?action=show&redirect=SSL).
+```
+$ python rsa_gen.py private.pem
+```
+When decrypting the TLS with this private key, we can find that the user was accessing the page `/7a144cdc500b28e80cf760d60aca2ed3` but resulted in a 404. And this is the link to the Coros CTF (https://ctf.challengecybersec.fr/7a144cdc500b28e80cf760d60aca2ed3)
